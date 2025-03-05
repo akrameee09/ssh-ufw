@@ -2,35 +2,37 @@
 
 To set up a firewall on your Ubuntu server with the specified rules, you can use ufw (Uncomplicated Firewall), which is a user-friendly interface for managing iptables. Below are the steps to configure the firewall according to your requirements:
 
-Step 1: Install ufw (if not already installed)
-bash
+# Step 1: Install ufw (if not already installed)
+```
 Copy
 sudo apt update
 sudo apt install ufw
-Step 2: Set Default Policies
+```
+# Step 2: Set Default Policies
 Set the default policies to deny all incoming and allow all outgoing traffic:
 
-bash
-Copy
+```
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
-Step 3: Allow Traffic from 103.68.104.0/24 to All Ports
+```
+# Step 3: Allow Traffic from 103.68.104.0/24 to All Ports
 Allow all traffic from the 103.68.104.0/24 subnet to your server:
-
-bash
-Copy
+```
 sudo ufw allow from 103.68.104.0/24 to any
-Step 4: Block Port 62025 for All Except 103.68.104.0/24
+```
+# Step 4: Block Port 62025 for All Except 103.68.104.0/24
 First, allow port 62025 for the 103.68.104.0/24 subnet:
 
-bash
-Copy
+```
 sudo ufw allow from 103.68.104.0/24 to any port 62025
+
+```
 Then, block port 62025 for all other IPs:
 
-bash
-Copy
+```
 sudo ufw deny 62025
+```
+
 Step 5: Allow Port 80 for All
 Allow port 80 (HTTP) for all users:
 
