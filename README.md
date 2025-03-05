@@ -33,24 +33,22 @@ Then, block port 62025 for all other IPs:
 sudo ufw deny 62025
 ```
 
-Step 5: Allow Port 80 for All
+# Step 5: Allow Port 80 for All
 Allow port 80 (HTTP) for all users:
-
-bash
-Copy
+```
 sudo ufw allow 80/tcp
-Step 6: Enable the Firewall
+```
+# Step 6: Enable the Firewall
 After configuring the rules, enable the firewall:
-
-bash
-Copy
+```
 sudo ufw enable
-Step 7: Verify the Rules
+```
+# Step 7: Verify the Rules
 Check the status of the firewall to ensure the rules are correctly applied:
 
-bash
-Copy
+```
 sudo ufw status verbose
+```
 Example Output:
 Copy
 Status: active
@@ -61,18 +59,18 @@ Anywhere                   ALLOW       103.68.104.0/24
 62025                      ALLOW       103.68.104.0/24
 80/tcp                     ALLOW       Anywhere
 62025                      DENY        Anywhere
-Step 8: (Optional) Allow SSH Access
+# Step 8: (Optional) Allow SSH Access
 If you are managing the server remotely, ensure that SSH (port 22) is allowed:
 
-bash
-Copy
+```
 sudo ufw allow 22/tcp
+```
 Step 9: (Optional) Reload the Firewall
 If you make any changes, you can reload the firewall:
-
-bash
-Copy
+```
 sudo ufw reload
+```
+
 Summary
 All traffic from 103.68.104.0/24 is allowed to any port.
 
