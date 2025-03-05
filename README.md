@@ -50,7 +50,7 @@ Check the status of the firewall to ensure the rules are correctly applied:
 sudo ufw status verbose
 ```
 Example Output:
-Copy
+```
 Status: active
 
 To                         Action      From
@@ -59,6 +59,7 @@ Anywhere                   ALLOW       103.68.104.0/24
 62025                      ALLOW       103.68.104.0/24
 80/tcp                     ALLOW       Anywhere
 62025                      DENY        Anywhere
+```
 # Step 8: (Optional) Allow SSH Access
 If you are managing the server remotely, ensure that SSH (port 22) is allowed:
 
